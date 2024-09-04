@@ -108,6 +108,10 @@ class User < ApplicationRecord
     following.include?(other_user)
   end
 
+  def self.search_for(name)
+      User.where(name: name)
+  end
+
   private
 
     # メールアドレスをすべて小文字にする
