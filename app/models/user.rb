@@ -108,8 +108,8 @@ class User < ApplicationRecord
     following.include?(other_user)
   end
 
-  def self.search_for(name)
-      User.where(name: name)
+  def self.search_for(keyword)
+    User.where('email Like ?', '%'+keyword+'%').or(User.where('name Like ?','%'+keyword+'%'))
   end
 
   private
