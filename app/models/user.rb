@@ -112,6 +112,10 @@ class User < ApplicationRecord
     User.where('email Like ?', '%' + keyword + '%').or(User.where('name Like ?','%'+ keyword + '%' ))
   end
 
+  def self.search_for_birthplace(birthplace)
+    User.where("birthplace LIKE ?", '%' + birthplace + '%')
+  end
+
   private
 
     # メールアドレスをすべて小文字にする
