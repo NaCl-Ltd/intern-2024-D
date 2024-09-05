@@ -1,6 +1,7 @@
 <% provide(:title, 'All users') %>
 <h1>All users</h1>
 <%= render 'layouts/search' %>
+<%= render 'layouts/search_for_birthplace' %>
 <%= will_paginate %>
 <ul class="users">
   <%= render @users %>

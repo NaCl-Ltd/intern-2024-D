@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   post   "/login",   to: "sessions#create"
   delete "/logout",  to: "sessions#destroy"
   get '/search', to: 'searches#search'
+ get 'search_for_birthplace', to: 'searches#search_for_birthplace'
+
   resources :users do
     member do
       get :following, :followers
